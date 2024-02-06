@@ -5,8 +5,8 @@ sudo apt update
 sudo apt install -y curl
 
 # First ensure that the Ubuntu Universe repository is enabled.
-sudo apt install software-properties-common
-sudo add-apt-repository universe
+sudo apt install software-properties-common -y
+sudo add-apt-repository universe -y
 
 # Now add the ROS 2 GPG key with apt.
 sudo apt update && sudo apt install curl -y
@@ -20,7 +20,7 @@ sudo apt update
 sudo apt upgrade
 
 # Desktop Install (Recommended): ROS, RViz, demos, tutorials.
-sudo apt install ros-humble-desktop
+sudo apt install ros-humble-desktop -y
 
 # Source ROS 2 setup.bash
 source /opt/ros/humble/setup.bash
