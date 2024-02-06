@@ -34,6 +34,7 @@ sudo apt upgrade
 
 # Desktop Install (Recommended): ROS, RViz, demos, tutorials.
 sudo apt install ros-humble-desktop -y
+sudo apt install ros-dev-tools -y
 
 # Source ROS 2 setup.bash
 source /opt/ros/humble/setup.bash
