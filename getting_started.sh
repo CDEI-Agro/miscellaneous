@@ -16,6 +16,8 @@ sudo apt install code -y
 sudo apt install net-tools -y
 # Install terminator
 sudo apt install terminator -y
+# Install git
+sudo apt install git -y
 
 #### ROS Humble installation:
 # First ensure that the Ubuntu Universe repository is enabled.
@@ -36,21 +38,10 @@ sudo apt upgrade
 sudo apt install ros-humble-desktop -y
 sudo apt install ros-dev-tools -y
 
-# Source ROS 2 setup.bash
+# Source ROS 2 setup.bash and set to do it every time bash is opened.
 source /opt/ros/humble/setup.bash
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 
-# Create ROS 2 workspace
+# Create ROS 2 workspace directory
 mkdir -p ~/ws/src
 cd ~/ws
-
-# # Clone the package
-# git clone https://github.com/CDEI-Agro/agri_bot src/agri_bot
-
-# # Install dependencies
-# rosdep install --from-paths src --ignore-src -r -y
-
-# # Build the package
-# colcon build
-
-# # Source the workspace
-# source install/setup.bash
