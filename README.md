@@ -67,8 +67,8 @@ we won't need to run this command each time. Open bashrc `gedit ~/.bashrc` and a
 
 3. Plug the joysticks into any usb port.
 
-4. Run `ros2 launch agri_bot sim_launch.launch.py use_sim_time:=true`
+4. Run `ros2 launch agri_bot sim_launch.launch.py use_sim_time:=true`.
+  
+5. Gazebo simulation will take some time to load for the first time. If it does't load re run the command after killing the previous one.
 
-5 . Gazebo simulation will take some time to load for the first time. If it does't load re run the command after killing the previous one.
-
-6. Once it starts you can use the joystick to  move the robot around.
+7. Once it starts you can use the joystick to  move the robot around.
