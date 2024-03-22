@@ -1,4 +1,4 @@
-# Instructions for setting up Github account and SSH keys
+# Instructions for setting up your Github account and SSH keys
 
 1. Sign up on [Github](https://github.com/) using your UPC credentials and ask one of the team members to add you to the CDEI organization.
    
