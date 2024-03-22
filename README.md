@@ -5,7 +5,7 @@
 3. Create a a new ssh key for your account. In a terminal and run:
 
     `ssh-keygen -t ed25519 -C "your_email@example.com"` \
-      replacing the email address with your email \
+      replacing the email address with your email 
     
 3. Save the key at the default location when prompted.
  
