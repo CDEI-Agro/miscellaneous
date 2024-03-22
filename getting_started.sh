@@ -43,5 +43,5 @@ source /opt/ros/humble/setup.bash
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 
 # Create ROS 2 workspace directory
-mkdir -p ~/ws/src
-cd ~/ws
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws
