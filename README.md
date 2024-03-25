@@ -27,35 +27,11 @@ add a new key to your account.
 
 # Instructions for setting up ROS and the Navigations stack:
 
-1. Download this bash script [file](https://github.com/CDEI-Agro/miscellaneous/blob/main/getting_started.sh):
+1. Run `git@github.com:CDEI-Agro/miscellaneous.git` from yout terminal.
 
-2. Make the file executable: `chmod +x path to file` .
+2. Make the file `installation.sh` executable: `chmod +x path to file` .
 
-3. Execute the file. Run this command in a terminal from folder where the file is located (usually downloads)L `./getting_started.sh`.
-
-4. This should install ROS and all the necessary dependencies. Enter `Y` if and when prompted. Restart the terminal. 
-
-5. Go to the src fodler of the newly created workspace: `cd ~/ros2_ws/src`
-
-6. Clone agri_bot repo: `git clone git@github.com:CDEI-Agro/agri_bot.git`
-
-7. Clone ouster driver  repo: `git clone -b ros2 --recurse-submodules git@github.com:CDEI-Agro/ouster-ros.git`
-
-8. Go to the parent workspace folder: `cd ..`
-
-9. Install all package dependencies using rosdep: `rosdep install --from-paths . --ignore-src -y`
-
-10. If calling rosdep for the first time you might need to initalize rosdep. Follow the commands printed on the terminal.
-
-11. Although we do not need turtlebot3 we may still be using some files from the package so install all turtlebot3 packages:
-    `sudo apt install turtlebot3*`
-
-12. Create a models folder in the gazebo folder to ad our mesh files to:
-    `mkdir ~/.gazebo/models`
-
-12. Build agri_bot packge. Call `colcon build --symlink-install --packages-select agri_bot`
-
-13. Build ouster package: `colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release`
+3. Run the file: `bash -x installation.sh`
 
 # Testing
 

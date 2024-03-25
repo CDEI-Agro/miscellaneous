@@ -43,5 +43,20 @@ source /opt/ros/humble/setup.bash
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 
 # Create ROS 2 workspace directory
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws
+mkdir -p ~/ros_ws/src
+cd ~/ros_ws/src
+
+git clone git@github.com:CDEI-Agro/agri_bot.git
+git clone -b ros2 --recurse-submodules git@github.com:CDEI-Agro/ouster-ros.git
+
+cd ~/ros_ws
+
+rosdep install --from-paths . --ignore-src -y
+
+sudo apt install ros-humble-turtlebot3*
+
+mkdir ~/.gazebo/models
+
+colcon build --symlink-install --packages-select agri_bot
+
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
