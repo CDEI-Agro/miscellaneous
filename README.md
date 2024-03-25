@@ -33,6 +33,37 @@ add a new key to your account.
 
 3. Run the file: `bash -x installation.sh`
 
+4. Only add the following lines to your bashrc file if you are on the platform's computer: 
+    `export ROS_DOMAIN_ID=x`\
+    where `x=1` for green moby and `x=2` for red moby
+
+5. If you are on the computer thaat connects with add the following lines to your bashrc:
+    ````
+    set_moby_model() {
+         case "$1" in
+             "GREEN")
+                 export ROS_DOMAIN_ID=1
+            echo "MOBY model set to GREEN"
+            ;;
+        "RED")
+            export ROS_DOMAIN_ID=2
+            echo "MOBY model set to GREEN"
+            ;;
+        *)
+            echo "Invalid robot color. Please specify either GREEN or RED."
+            ;;
+    esac
+   }
+      ````
+   
+    This creates a function called `set_moby_model` in your bashrc that 
+    allows you to set the moby model you are communicating with.
+    
+    usage:
+    
+    ````
+   set_moby_model GREEN or set_moby_model RED 
+
 # Testing
 
 1. Each time we need to run files from our package we need to source our ros2_ws:\
