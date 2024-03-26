@@ -33,11 +33,13 @@ add a new key to your account.
 
 3. Run the file: `bash -x installation.sh`
 
-4. Only add the following lines to your bashrc file if you are on the platform's computer: 
+4. Check the terminal for any `yes` and `no` prompts while the script executes.
+
+5. Only add the following lines to your bashrc file if you are on the platform's computer: 
     `export ROS_DOMAIN_ID=x`\
     where `x=1` for green moby and `x=2` for red moby
 
-5. If you are on the computer thaat connects with add the following lines to your bashrc:
+6. If you are on the computer that connects with moby platform add the following lines to your bashrc:
     ````
     set_moby_model() {
          case "$1" in
