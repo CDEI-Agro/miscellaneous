@@ -29,19 +29,17 @@ add a new key to your account.
 
 1. Run `git clone git@github.com:CDEI-Agro/miscellaneous.git` from yout terminal.
 
-2. Make models directory in the gazebo folder: `mkdir -p ~/.gazebo/models`
+2. Make the file `installation.sh` executable: `chmod +x path to file`.
 
-3. Make the file `installation.sh` executable: `chmod +x path to file`.
+3. Run the file: `bash -x installation.sh`
 
-4. Run the file: `bash -x installation.sh`
+4. Check the terminal for any `yes` and `no` prompts while the script executes.
 
-5. Check the terminal for any `yes` and `no` prompts while the script executes.
-
-6. Only add the following lines to your bashrc file if you are on the platform's computer: 
+5. Only add the following lines to your bashrc file if you are on the platform's computer: 
     `export ROS_DOMAIN_ID=x`\
     where `x=1` for green moby and `x=2` for red moby
 
-7. If you are on the computer that connects with moby platform add the following lines to your bashrc:
+6. If you are on the computer that connects with moby platform add the following lines to your bashrc:
     ````
     set_moby_model() {
          case "$1" in
