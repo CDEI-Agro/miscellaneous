@@ -55,7 +55,7 @@ rosdep install --from-paths . --ignore-src -y
 
 sudo apt install ros-humble-turtlebot3*
 
-mkdir ~/.gazebo/models
+mkdir -p ~/.gazebo/models
 
 colcon build --symlink-install --packages-select agri_bot
 
