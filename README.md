@@ -49,7 +49,7 @@ add a new key to your account.
             ;;
         "RED")
             export ROS_DOMAIN_ID=2
-            echo "MOBY model set to GREEN"
+            echo "MOBY model set to RED"
             ;;
         *)
             echo "Invalid robot color. Please specify either GREEN or RED."
