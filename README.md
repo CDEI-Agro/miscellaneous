@@ -27,7 +27,7 @@ add a new key to your account.
 
 # Instructions for setting up ROS and the Navigations stack:
 
-1. Run `git@github.com:CDEI-Agro/miscellaneous.git` from yout terminal.
+1. Run `git clone git@github.com:CDEI-Agro/miscellaneous.git` from yout terminal.
 
 2. Make the file `installation.sh` executable: `chmod +x path to file` .
 
