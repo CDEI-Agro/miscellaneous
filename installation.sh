@@ -43,13 +43,13 @@ source /opt/ros/humble/setup.bash
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 
 # Create ROS 2 workspace directory
-mkdir -p ~/ros_ws/src
-cd ~/ros_ws/src
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
 
 git clone git@github.com:CDEI-Agro/agri_bot.git
 git clone -b ros2 --recurse-submodules git@github.com:CDEI-Agro/ouster-ros.git
 
-cd ~/ros_ws
+cd ~/ros2_ws
 
 rosdep install --from-paths . --ignore-src -y
 
