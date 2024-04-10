@@ -57,6 +57,6 @@ sudo apt install ros-humble-turtlebot3*
 
 mkdir -p ~/.gazebo/models
 
-colcon build --symlink-install --packages-select agri_bot
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-select ouster_sensor_msgs
 
-colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-select ouster_ros
