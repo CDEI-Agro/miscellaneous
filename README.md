@@ -33,7 +33,7 @@ add a new key to your account.
 
 3. Run the file: `bash -x installation.sh --platform` `x`
 
-    replace x with `green`, `red` or `default` depending on the platform you are configuring
+    replace x depending on the platform you are configuring
     `green` for MOBY green 
     `red` for MOBY red
     `default` for your own computer or the computer that connects with these platforms
