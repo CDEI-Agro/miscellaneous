@@ -33,7 +33,7 @@ add a new key to your account.
 
 2. Make the file `installation.sh` executable: `chmod +x path to file`.
 
-3. Run the file: `bash -x installation.sh --platform` `x`
+3. Run the file: `bash -x miscellaneous/installation.sh --platform` `x`
 
     replace x depending on the platform you are configuring:  
   
