@@ -29,7 +29,7 @@ add a new key to your account.
 
 0. Install git if isn't already installed: `sudo apt install git`
 
-1. Run `git clone git@github.com:CDEI-Agro/miscellaneous.git` from yout terminal.
+1. Run `git clone git@github.com:CDEI-Agro/miscellaneous.git` from your terminal.
 
 2. Make the file `installation.sh` executable: `chmod +x path to file`.
 
@@ -60,3 +60,8 @@ usage:
 3. Gazebo simulation will take some time to load for the first time. If it does't load re run the command after killing the previous one.
 
 4. Once it starts you can use the joystick to  move the robot around.
+
+
+# Issues:
+
+If you encounter any key adding issues follow the instrutions [here](https://answers.ros.org/question/398460/how-to-add-a-pubkey/) to add apt key properly.
