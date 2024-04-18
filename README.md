@@ -27,6 +27,8 @@ add a new key to your account.
 
 # Instructions for setting up ROS and the Navigation stack:
 
+0. Install git if isn't already installed: `sudo apt install git`
+
 1. Run `git clone git@github.com:CDEI-Agro/miscellaneous.git` from yout terminal.
 
 2. Make the file `installation.sh` executable: `chmod +x path to file`.
