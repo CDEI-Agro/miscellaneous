@@ -65,3 +65,13 @@ usage:
 # Issues:
 
 If you encounter any key adding issues follow the instrutions [here](https://answers.ros.org/question/398460/how-to-add-a-pubkey/) to add apt key properly.
+
+# Router setup instructions:
+
+The sim card needs to be configured with the router to use internet:
+
+1. Connect to the router wifi.
+2. Enter the router via ssh: `ssh root@router_ip_address`.
+3. Run the following command after turning on the correct sim by entering the router through the web app:
+
+   `gsmctl -A AT+CPIN=\"PUK\",\"PIN\"`
