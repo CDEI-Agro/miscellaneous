@@ -54,7 +54,7 @@ usage:
 
 1. Plug the joysticks into any usb port.
 
-2. Run `ros2 launch agri_bot sim_launch.launch.py use_sim_time:=true`.
+2. Run `ros2 launch agri_bot joy_control.launch.py sim:=true`.
   
 3. Gazebo simulation will take some time to load for the first time. If it does't load re run the command after killing the previous one.
 
