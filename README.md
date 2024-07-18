@@ -1,4 +1,5 @@
 # Instructions for setting up your Github account and SSH keys
+0. Install git if isn't already installed: `sudo apt install git`
 
 1. Sign up on [Github](https://github.com/) using your UPC credentials and ask one of the team members to add you to the CDEI organization.
    
@@ -26,8 +27,6 @@ add a new key to your account.
       `You've successfully authenticated`
 
 # Instructions for setting up ROS and the Navigation stack:
-
-0. Install git if isn't already installed: `sudo apt install git`
 
 1. Run `git clone git@github.com:CDEI-Agro/miscellaneous.git` from your terminal.
 
