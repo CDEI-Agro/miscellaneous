@@ -14,37 +14,50 @@ done
 # Set default value if argument is not provided or invalid
 PLATFORM="${PLATFORM:-default}"
 
-# Then add the repository to your sources list.
+# Add the universe repository
+sudo add-apt-repository universe
+
+# Install necessary tools and update apt repositories
+sudo apt update
+sudo apt install -y curl software-properties-common apt-transport-https wget net-tools terminator
+
+# Install the ROS keyring
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+# Add the ROS 2 repository to your sources list
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 
-# Update again your apt repository caches after setting up the repositories.
+# Update again after adding the new repository
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
+
 
 #### Useful programs:
-# Install curl
-sudo apt install -y curl
-# Install VSCode
-sudo apt install software-properties-common apt-transport-https wget -y
-wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-sudo apt install code -y
+# Install Visual Studio Code
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg > /dev/null
+sudo add-apt-repository "deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt install -y code
+
 # Install ifconfig
 sudo apt install net-tools -y
 # Install terminator
 sudo apt install terminator -y
 
 # Desktop Install (Recommended): ROS, RViz, demos, tutorials.
-sudo apt install ros-humble-desktop -y
-sudo apt install ros-dev-tools -y
+sudo apt install -y ros-humble-desktop ros-dev-tools
+
+# Ensure rosdep is installed and initialized
+sudo apt install -y python3-rosdep
+sudo rosdep init
+rosdep update
 
 # Source ROS 2 setup.bash and set to do it every time bash is opened.
 source /opt/ros/humble/setup.bash
-echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+echo "source /opt/ros/humble/setup.bash" >> $HOME/.bashrc
 
 # Create ROS 2 workspace directory
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws/src
+mkdir -p $HOME/ros2_ws/src
+cd $HOME/ros2_ws/src
 
 git clone git@github.com:CDEI-Agro/agri_bot.git
 
@@ -84,11 +97,11 @@ if [[ "$PLATFORM" == "default" ]]; then
 EOT
 fi
 
-cd ~/ros2_ws
-echo "source /home/$USER/ros2_ws/install/setup.bash" >> ~/.bashrc
+cd $HOME/ros2_ws
+echo "source $HOME/ros2_ws/install/setup.bash" >> $HOME/.bashrc
 
 
-#rosdep install --from-paths . --ignore-src -y
+rosdep install --from-paths . --ignore-src -y
 
 sudo apt install ros-humble-turtlebot3*
 
