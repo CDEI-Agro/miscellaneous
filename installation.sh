@@ -57,14 +57,13 @@ echo "source /opt/ros/humble/setup.bash" >> $HOME/.bashrc
 mkdir -p $HOME/ros2_ws/src
 cd $HOME/ros2_ws/src
 
-git clone git@gitlab.upc.edu:robot_navigation/agro-moby.git
-git clone git@gitlab.upc.edu:robot_navigation/ublox_dual.git -b ros2
+git clone git@github.com:CDEI-Agro/agri_bot.git
+git clone git@github.com:CDEI-Agro/ublox_dual.git -b ros2
 
 if [[ "$PLATFORM" == "green" || "$PLATFORM" == "red" ]]; then
     # Clone ouster-ros repository
-    git clone -b ros2 --recurse-submodules git@gitlab.upc.edu:robot_navigation/ouster-ros.git
+    git clone -b ros2 --recurse-submodules git@github.com:CDEI-Agro/ouster-ros.git
     # clone sick lidar repositories
-    git clone git@gitlab.upc.edu:robot_navigation/libsick_ldmrs.git
     git clone -b master git@gitlab.upc.edu:robot_navigation/sick_scan_xd.git
 
     # Add export ROS_DOMAIN_ID=1 to ~/.bashrc if PLATFORM is 'green'
@@ -115,6 +114,5 @@ colcon build --symlink-install --packages-select ublox_msgs ublox_serialization 
 if [[ "$PLATFORM" == "green" || "$PLATFORM" == "red" ]]; then
     colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-select ouster_sensor_msgs
     colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-select ouster_ros
-    colcon build --symlink-install --packages-select libsick_ldmrs --event-handlers console_direct+
     colcon build --symlink-install --packages-select sick_scan_xd --cmake-args " -DROS_VERSION=2" " -DLDMRS=0" --event-handlers console_direct+
 fi
